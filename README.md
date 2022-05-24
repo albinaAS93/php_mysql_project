@@ -3,10 +3,9 @@
 <p> Questo progetto prevede la creazione di APIRestful e le relative operazioni CRUD. </p>
 
 <hr>
-Ecco una 
-[Progetto PHP e MySQL di Albina Sela.pdf](https://github.com/albinaAS93/php_project/files/8764199/Progetto.PHP.e.MySQL.di.Albina.Sela.pdf)
+Scarica la <a href="https://github.com/albinaAS93/php_project/files/8764199/Progetto.PHP.e.MySQL.di.Albina.Sela.pdf">presentazione</a> del progetto.
  del progetto.
 
 <hr>
 
-Si può clonare e provare il progetto usando <a href="https://www.postman.com/">Postman (o simili).
+Si può clonare e provare il progetto usando <a href="https://www.postman.com/">Postman </a> (o simili).
