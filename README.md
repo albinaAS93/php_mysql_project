@@ -8,3 +8,5 @@ Scarica la <a href="https://github.com/albinaAS93/php_project/files/8764199/Prog
 <h3> Testing </h3>
 
 Si può clonare e provare il progetto usando <a href="https://www.postman.com/">Postman </a> (o simili).
+
+<h5> <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"> Albina Sela </a> </h5>
