@@ -4,7 +4,7 @@
 
 <hr>
 Ecco una 
-[Presentazione] [Progetto PHP e MySQL di Albina Sela.pdf](https://github.com/albinaAS93/php_project/files/8764199/Progetto.PHP.e.MySQL.di.Albina.Sela.pdf)
+[Progetto PHP e MySQL di Albina Sela.pdf](https://github.com/albinaAS93/php_project/files/8764199/Progetto.PHP.e.MySQL.di.Albina.Sela.pdf)
  del progetto.
 
 <hr>
