@@ -6,28 +6,30 @@
     header("Access-Control-Max-Age: 3600");
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-    include_once '../config/database.php';
-    include_once '../models/City.php';
+    require 'core/bootstrap.php';
 
+    $request = new Request;
+    $request->decodeHttpRequest();
+    $data = $request->getBody();
+    
     $database = new Database();
-    $db = $database->getConnection();
-
-    $city = new City($db);
-
+    $database->getConnection($config);
+    
+    $city = new City($database);
+    
     if (!empty($data['name'])) {
 
         if ($city->create($data)) {
+
             http_response_code(201);
-            echo json_encode(array("message" => "City added!"));
-        }
-        else {
+            echo json_encode(array("message" => "A new city has been added."));
+        } else {
             http_response_code(503);
-            echo json_encode(array("message" => "Cannot add city!"));
+            echo json_encode(array("message" => "City was not added."));
         }
-    }
-    else {
+    } else {
         http_response_code(400);
-        echo json_encode(array("message" => "Cannot add city. Incomplete data!"));
+        echo json_encode(array("message" => "Error: Data is missing."));
     }
 
 ?>
