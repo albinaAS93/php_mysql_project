@@ -6,7 +6,7 @@
     header("Access-Control-Max-Age: 3600");
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-    require 'core/bootstrap.php';
+    include_once 'core/bootstrap.php';
 
     $request = new Request;
     $request->decodeHttpRequest();

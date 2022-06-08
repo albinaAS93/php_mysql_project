@@ -2,7 +2,7 @@
 
     class Database
     {
-        public $connection;
+        protected $connection;
 
         public function getConnection($config)
         {

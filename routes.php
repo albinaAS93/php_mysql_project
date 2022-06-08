@@ -21,4 +21,18 @@
         ]
     ];
 
+    // $router->get('cities', 'app/controllers/cities/read.php');
+    // $router->get('flights', 'app/controllers/flights/read.php');
+    // $router->get('flights/cities', 'app/controllers/flights/filter.php');
+    // $router->get('flights/cities', 'app/controllers/flights/filter.php');
+
+    // $router->post('cities', 'app/controllers/cities/create.php');
+    // $router->post('flights', 'app/controllers/cities/create.php');
+
+    // $router->put('cities', 'app/controllers/cities/update.php');
+    // $router->put('flights', 'app/controllers/cities/update.php');
+
+    // $router->delete('cities', 'app/controllers/cities/delete.php');
+    // $router->delete('flights', 'app/controllers/cities/delete.php');
+
 ?>
