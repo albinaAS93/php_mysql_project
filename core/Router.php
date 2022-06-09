@@ -20,7 +20,7 @@
                 require $this->routes[$method][$path];
             } else {
                 http_response_code(404);
-                echo json_encode(array("message" => "This route does not exist."));
+                echo json_encode(array("message" => "This route does not exist!"));
             }
         }
     }
