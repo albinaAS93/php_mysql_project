@@ -11,8 +11,8 @@
     $request = new Request;
     $request->decodeHttpRequest();
 
-    $database = new Database();
-    $database->getConnection($config);
+    $database = new Database($config);
+    $database->getConnection();
 
     $flight = new Flight($database);
 

@@ -4,6 +4,11 @@
     {
         protected $routes;
 
+        public function __construct(Array $routes)
+        {
+            $this->routes = $routes;
+        }
+
         function load($routes)
         {
             $this->routes = $routes;

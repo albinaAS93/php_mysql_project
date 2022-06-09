@@ -1,10 +1,10 @@
 <?php
 
-    return [
-        'name' => 'orizon',
+    $config = [
+        'connection' => 'mysql:host=localhost',
+        'dbname' => 'orizon',
         'username' => 'root',
         'password' => '',
-        'connection' => 'mysql:host=127.0.0.1',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]

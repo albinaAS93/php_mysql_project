@@ -1,12 +1,12 @@
 <?php
 
-    $config = require 'config.php';
+    include_once 'config.php';
     $routes = require 'routes.php';
 
-    require 'database.php';
-    require 'app/models/City.php';
-    require 'app/models/Flight.php';
-    require 'Request.php';
-    require 'Router.php';
+    include_once 'database.php';
+    include_once 'app/models/City.php';
+    include_once 'app/models/Flight.php';
+    include_once 'Request.php';
+    include_once 'Router.php';
 
 ?>
