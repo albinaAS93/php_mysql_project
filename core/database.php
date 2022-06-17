@@ -2,34 +2,32 @@
 
     class Database
     {
-        protected $config;
+
         protected $connection;
 
-        public function __construct(Array $config) {
+        public function getConnection() {
 
-            $this->config = $config;
+            $this->connection;
             
         }
 
-        public function getConnection() 
+        public function openConnection() 
         {
+            $host = getenv('DB_HOST');
+            $db_name = getenv('DB_NAME');
+            $username = getenv('DB_USERNAME');
+            $password = getenv('DB_PASSWORD');
+
             try {
-
-                if (is_null($this->connection)) {
-                    return $this->connection = new PDO(
-                        $this->config['connection'] . ';dbname=' . $this->config['dbname'],
-                        $this->config['username'],
-                        $this->config['password'],
-                        $this->config['options']
-                    );
-                } 
-
-                return $this->connection;
-
+                $this->connection = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
 
             } catch(PDOException $e) {
                 echo "Connection Error: " . $e->getMessage();
+                exit;
             }
+
             return $this->connection;
         }
+
     }
+?>
