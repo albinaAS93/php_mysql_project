@@ -15,8 +15,8 @@
             $request = new Request;
             $request->decodeHttpRequest();
 
-            $database = new Database($config);
-            $database->getConnection();
+            $database = new Database();
+            $database->openConnection();
 
             $city = new City($database);
 
@@ -46,8 +46,8 @@
             $request->decodeHttpRequest();
             $data = $request->getBody();
             
-            $database = new Database($config);
-            $database->getConnection();
+            $database = new Database();
+            $database->openConnection();
             
             $city = new City($database);
             
@@ -82,8 +82,8 @@
             $request->decodeHttpRequest();
             $data = $request->getBody();
         
-            $database = new Database($config);
-            $database->getConnection();
+            $database = new Database();
+            $database->openConnection();
         
             $city = new City($database);
         
@@ -116,8 +116,8 @@
             $request->decodeHttpRequest();
             $data = $request->getBody();
         
-            $database = new Database($config);
-            $database->getConnection();
+            $database = new Database();
+            $database->openConnection();
         
             $city = new City($database);
         
