@@ -1,28 +1,40 @@
 <?php
 
+    include_once './app/controllers/CitiesController.php';
+    include_once './app/controllers/FlightsController.php';
+
     class Router
     {
         protected $routes;
-
-        public function __construct(Array $routes)
-        {
-            $this->routes = $routes;
-        }
 
         function load($routes)
         {
             $this->routes = $routes;
         }
 
-        function direct($path, $method)
+        public function direct($uri, $request)
         {
-            if (array_key_exists($path, $this->routes[$method])) {
-                require $this->routes[$method][$path];
+            if (array_key_exists($uri, $this->routes[$request])) {
+                require $this->action(
+                    ...explode('@', $this->routes[$request][$uri])
+                );
             } else {
                 http_response_code(404);
                 echo json_encode(array("message" => "This route does not exist!"));
             }
         }
+
+        protected function action($controller, $action)
+        {
+            $controller = new $controller;
+
+            if (! method_exists($controller, $action)) {
+                throw new Exception("{$controller} does not respond to action {$action} action.");
+            }
+
+            return $controller->$action();
+        }
+
     }
 
 ?>

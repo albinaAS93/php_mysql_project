@@ -1,23 +1,23 @@
 <?php
 
-    $routes = [
+    return $routes = [
         'GET' => [
-            'cities' => 'app/controllers/cities/read.php',
-            'flights' => 'app/controllers/flights/read.php',
-            'flights/cities' => 'app/controllers/flights/filter.php',
-            "flights/seats" => 'app/controllers/flights/filter.php'
+            'cities' => 'CitiesController@read',
+            'flights' => 'FlightsController@read',
+            'flights/cities' => 'FlightsController@filter',
+            "flights/seats" => 'FlightsController@filter'
         ],
         'POST' => [
-            'cities' => 'app/controllers/cities/create.php',
-            'flights' => 'app/controllers/flights/create.php'
+            'cities' => 'CitiesController@create',
+            'flights' => 'FlightsController@create',
         ],
         'PUT' => [
-            'cities' => 'app/controllers/cities/update.php',
-            'flights' => 'app/controllers/flights/update.php'
+            'cities' => 'CitiesController@update',
+            'flights' => 'FlightsController@update',
         ],
         'DELETE' => [
-            'cities' => 'app/controllers/cities/delete.php',
-            'flights' => 'app/controllers/flights/delete.php'
+            'cities' => 'CitiesController@delete',
+            'flights' => 'FlightsController@delete',
         ]
     ];
 

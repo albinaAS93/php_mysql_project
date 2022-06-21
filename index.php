@@ -1,18 +1,19 @@
 <?php
 
-    require 'core/Router.php';
-    require 'core/Request.php';
-    require 'routes.php';
+    include_once 'core/Router.php';
+    include_once 'core/Request.php';
+    $routes = include_once 'routes.php';
 
 
     $request = new Request;
     $request->decodeHttpRequest();
-    /*echo "<pre>";
-    var_dump($request);
-    echo "</pre>";*/
 
-    $router = new Router($routes);
-    // $router->load($routes);
+    $fileContent = file(__DIR__.'/.env');
+    foreach($fileContent as $envVar){
+        putenv(trim($envVar));} 
+
+    $router = new Router;
+    $router->load($routes);
     $router->direct($request->getPath(), $request->getMethod());
 
 ?>
