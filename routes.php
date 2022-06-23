@@ -1,6 +1,7 @@
 <?php
 
     return $routes = [
+
         'GET' => [
             'cities' => 'CitiesController@read',
             'flights' => 'FlightsController@read',

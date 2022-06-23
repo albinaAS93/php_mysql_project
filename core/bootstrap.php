@@ -1,6 +1,6 @@
 <?php
 
-    $routes = include_once 'routes.php';
+    // $routes = include_once 'routes.php';
 
     include_once 'database.php';
     include_once 'app/models/Cities.php';

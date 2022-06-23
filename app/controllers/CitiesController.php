@@ -1,6 +1,9 @@
 <?php
 
+    include_once 'core/bootstrap.php';
+
     class CitiesController{
+
 
         public function read() {
 
@@ -9,8 +12,6 @@
             header("Access-Control-Allow-Methods: GET");
             header("Access-Control-Max-Age: 3600");
             header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-            include_once 'core/bootstrap.php';
 
             $request = new Request;
             $request->decodeHttpRequest();
@@ -39,8 +40,6 @@
             header("Access-Control-Allow-Methods: POST");
             header("Access-Control-Max-Age: 3600");
             header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        
-            include_once 'core/bootstrap.php';
         
             $request = new Request;
             $request->decodeHttpRequest();
@@ -75,9 +74,7 @@
             header("Access-Control-Allow-Methods: DELETE");
             header("Access-Control-Max-Age: 3600");
             header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        
-            include_once 'core/bootstrap.php';
-        
+                
             $request = new Request;
             $request->decodeHttpRequest();
             $data = $request->getBody();
@@ -109,8 +106,6 @@
             header("Access-Control-Allow-Methods: PUT");
             header("Access-Control-Max-Age: 3600");
             header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        
-            include_once 'core/bootstrap.php';
         
             $request = new Request;
             $request->decodeHttpRequest();

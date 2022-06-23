@@ -23,7 +23,7 @@
                 ORDER BY flights.availableSeats ASC;"
             ;
 
-            $stmt = $this->pdo->getConnection()->prepare($sql);
+            $stmt = $this->pdo->openConnection()->prepare($sql);
             if ($stmt->execute()) {
                 $rows = array();
                 while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
@@ -50,7 +50,7 @@
                 ;"
             ;
 
-            $stmt = $this->pdo->getConnection()->prepare($sql);
+            $stmt = $this->pdo->openConnection()->prepare($sql);
             $param = array('name' => $data['name']);
 
             if ($stmt->execute($param)) {
@@ -79,7 +79,7 @@
                 ;"
             ;
 
-            $stmt = $this->pdo->getConnection()->prepare($sql);
+            $stmt = $this->pdo->openConnection()->prepare($sql);
             $param = array('seats' => $data['availableSeats']);
             if ($stmt->execute($param)) {
                 $rows = array();
@@ -99,7 +99,7 @@
                 VALUES (:departure, :arrival, :availableSeats)"
             ;
 
-            $stmt = $this->pdo->getConnection()->prepare($sql);
+            $stmt = $this->pdo->openConnection()->prepare($sql);
 
             $param = array(
                 'departure' => $data['departure'],
@@ -120,7 +120,7 @@
                 WHERE id = :id"
             ;
 
-            $stmt = $this->pdo->getConnection()->prepare($sql);
+            $stmt = $this->pdo->openConnection()->prepare($sql);
             $param = array('id' => $data['id'], 'seats' => $data['availableSeats']);
 
             if ($stmt->execute($param)) {
@@ -135,7 +135,7 @@
                 WHERE id = :id"
             ;
 
-            $stmt = $this->pdo->getConnection()->prepare($sql);
+            $stmt = $this->pdo->openConnection()->prepare($sql);
             $param = array('id' => $data['id']);
             
             if ($stmt->execute($param)) {

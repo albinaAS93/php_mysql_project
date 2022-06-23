@@ -8,12 +8,16 @@
         protected $routes;
 
         function load($routes)
-        {
+        {          
+
             $this->routes = $routes;
+
         }
 
         public function direct($uri, $request)
         {
+
+
             if (array_key_exists($uri, $this->routes[$request])) {
                 return $this->action(
                     ...explode('@', $this->routes[$request][$uri])
@@ -26,6 +30,7 @@
 
         protected function action($controller, $action)
         {
+
             $controller = new $controller;
 
             if (! method_exists($controller, $action)) {
@@ -33,6 +38,7 @@
             }
 
             return $controller->$action();
+            
         }
 
     }
