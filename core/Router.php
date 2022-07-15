@@ -16,12 +16,12 @@
 
         public function direct($uri, $request)
         {
-
-
             if (array_key_exists($uri, $this->routes[$request])) {
                 return $this->action(
                     ...explode('@', $this->routes[$request][$uri])
                 );
+
+                
             } else {
                 http_response_code(404);
                 echo json_encode(array("message" => "No route defined for this URI!"));

@@ -14,7 +14,6 @@
     $router = new Router;
     $router->load($routes);
 
-
     $router->direct($request->getPath(), $request->getMethod());
 
 ?>
